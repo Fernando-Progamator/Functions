@@ -23,4 +23,14 @@ function toggle(value)
   	end
   	wait(1)
   end
+    for _, player in ipairs(Players:GetChildren()) do
+        if player.Character == nil then
+            continue
+        end
+        for _, ins in ipairs(player.Character:GetChildren()) do
+            if ins:IsA("HighLight") then
+                ins:Destroy()
+            end
+        end
+    end
 end
